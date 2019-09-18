@@ -11,3 +11,4 @@
 ​	Flume Agent可以配置多个Source、Channel、Sink，Source接收到的事件可以通过Channel处理器（processor）、channel拦截器、Channel选择器将写入特定的channel中，Channel 处理器对应的类是**ChannelProcessor**类作用是处理从Source接收的Event,通过调用processEventBatch方法选择**批量发送**或者**单个发送**；**Channel拦截器**可以对事件进行修改或者删除，比如可以向报头中添加信息，用于决定事件写入的Channel，**多个Channel拦截器可以组成拦截链**，最后返回一个**处理后的事件列表**；Channel选择器是决定事件最终写入哪个Channel的组件。
 
 ​	在flume集群中，有许多种组织Agent的方法，最简单的一种就是使用单个Agent，来接收应用程序服务器的数据，且用同样的Agent将数据写入到存储系统，这样的系统可以在存储点的系统中隔离
+
